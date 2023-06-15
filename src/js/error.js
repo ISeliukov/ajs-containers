@@ -1,6 +1,6 @@
 export default class ErrorRepository {
   constructor() {
-    this.codes = new Map([[200, 'ok'], [300, 'redirect'], [400, 'client error'], [500, 'server error']]);
+    this.codes = new Map([[0, 'ok'], [1, 'too high value'], [2, 'too low value']]);
   }
 
   translate(code) {

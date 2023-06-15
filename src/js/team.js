@@ -5,24 +5,24 @@ export default class Team {
     this.members = new Set();
   }
 
-  add(character) {
-    if (!(character instanceof Character)) {
-      throw TypeError('');
+  add(char) {
+    if (!(char instanceof Character)) {
+      throw new Error('wrong type');
     }
 
-    if (this.members.has(character)) {
-      throw Error('');
+    if (this.members.has(char)) {
+      throw new Error('repeat char');
     }
 
-    this.members.add(character);
+    this.members.add(char);
   }
 
-  addAll(...characters) {
-    if (characters.some((el) => !(el instanceof Character))) {
-      throw TypeError('');
+  addAll(...chars) {
+    if (chars.some((elem) => !(elem instanceof Character))) {
+      throw new Error('error list');
     }
 
-    characters.forEach((el) => this.members.add(el));
+    chars.forEach((elem) => this.members.add(elem));
   }
 
   toArray() {
